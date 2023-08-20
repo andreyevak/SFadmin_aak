@@ -1,0 +1,22 @@
+---
+
+ - hosts: all
+   become: yes
+
+   tasks:
+
+    - name: Install script
+      template:
+        src: /etc/ansible/testweb.sh
+        dest: /home/andreyevak/testweb.sh
+        mode: 0777
+    - name: Line test
+      lineinfile:
+       path: /home/andreyevak/testweb.sh
+       insertafter: EOF
+       line: "{{ item }}"
+       state: present
+      with_items:
+      - 'date &>> /var/log/web.log'
+      - 'nginx -t &>>/var/log/web.log'
+
