@@ -1,0 +1,7 @@
+ansible.cfg
+common/
+hosts
+roles/
+testweb.sh
+zabbix_agentd.conf
+*.pub
