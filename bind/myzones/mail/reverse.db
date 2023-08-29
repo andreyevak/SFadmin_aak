@@ -1,0 +1,11 @@
+$TTL 604800
+5.81.250.in-addr.arpa. IN SOA ns1.158.160.54.174.nip.io. admin.158.160.54.174.nip.io.ru. (
+99115 ; serial
+3h ; renew period
+1h ; retry
+1w ; expire
+1h ) ; denial cache;
+5.81.250.in-addr.arpa. IN NS ns1.158.160.54.174.nip.io.
+5.81.250.in-addr.arpa. IN NS ns2.158.160.54.174.nip.io.
+174.54.160.158.in-addr.arpa. IN PTR 158.160.54.174.nip.io.
+174.54.160.158..in-addr.arpa. IN PTR mail.158.160.54.174.nip.io.
