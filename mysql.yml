@@ -1,0 +1,17 @@
+---
+
+- hosts: web
+  become: yes
+  tasks:
+  -  name: Install mysql on Ubuntu
+     apt:
+        name=mysql-server
+        state=latest
+     notify:
+        mysql systemd
+  handlers:
+  - name: mysql systemd
+    systemd:
+     name: mysql.service
+     enabled: yes
+     state: started

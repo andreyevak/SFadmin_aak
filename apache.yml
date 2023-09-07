@@ -1,0 +1,17 @@
+---
+
+- hosts: web
+  become: yes
+  tasks:
+  -  name: Install  apache on Ubuntu
+     apt:
+        name=apache2
+        state=latest
+     notify:
+        apache2 systemd
+  handlers:
+  - name: apache2 systemd
+    systemd:
+     name: apache2.service
+     enabled: yes
+     state: started

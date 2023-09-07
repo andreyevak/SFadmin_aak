@@ -1,0 +1,14 @@
+---
+
+- hosts: web
+  become: yes
+  tasks:
+  -  name: Install php7.4 on Ubuntu
+     apt:
+        name=php7.4
+  -  name: Install libapache2-mod-php7.4 on Ubuntu
+     apt:
+        name=libapache2-mod-php7.4
+  -  name: Install php7.4-mysql on Ubuntu
+     apt:
+        name=php7.4-mysql
